@@ -19,6 +19,11 @@ Great news! The following is already set up and ready:
    - [setup-ngrok.sh](setup-ngrok.sh) - Download and setup ngrok
    - [get-webhook-url.sh](get-webhook-url.sh) - Get GitHub webhook URL
 
+5. ✅ **Git Repository Initialized**:
+   - All files committed locally
+   - Remote configured: `git@github.com:cerbris/cicd-assignment.git`
+   - Branch: `main`
+
 ## 🚀 What You Need to Do
 
 Follow these steps in order:
@@ -34,22 +39,25 @@ Follow these steps in order:
 
 ---
 
-### Step 2: Create GitHub Repository (10 minutes)
+### Step 2: Create GitHub Repository (2 minutes)
 
-1. Create new repo on GitHub named `cicd-assignment`
-2. Push your code:
+**Git is already initialized!** Just need to create the repo on GitHub.
 
-```bash
-cd /home/jake/cicd-assignment
-git init
-git add .
-git commit -m "Initial commit: CI/CD pipeline"
-git remote add origin https://github.com/YOUR_USERNAME/cicd-assignment.git
-git branch -M main
-git push -u origin main
-```
+1. Go to https://github.com/new
+2. Repository settings:
+   - Owner: `cerbris`
+   - Name: `cicd-assignment`
+   - Description: `CI/CD Pipeline Demo with Jenkins and WebEx`
+   - Public repository
+   - **DO NOT** initialize with README
+3. Click "Create repository"
+4. Push your code:
+   ```bash
+   cd /home/jake/cicd-assignment
+   git push -u origin main
+   ```
 
-**Guide**: See [ASSIGNMENT_SETUP_STEPS.md](ASSIGNMENT_SETUP_STEPS.md#step-2-set-up-github-repository-10-minutes)
+**Detailed Guide**: See [CREATE_GITHUB_REPO.md](CREATE_GITHUB_REPO.md)
 
 ---
 
