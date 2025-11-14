@@ -1,0 +1,157 @@
+=======================================================
+JENKINS PIPELINE JOB CONFIGURATION
+=======================================================
+
+Job Name: cicd-assignment-pipeline
+Job Type: Pipeline
+
+=======================================================
+GENERAL SECTION
+=======================================================
+
+☑ GitHub project
+  Project URL: https://github.com/cerbris/cicd-assignment
+
+Description (optional):
+CI/CD Pipeline for Python Calculator Application
+
+=======================================================
+BUILD TRIGGERS SECTION
+=======================================================
+
+☑ GitHub hook trigger for GITScm polling
+
+=======================================================
+PIPELINE SECTION
+=======================================================
+
+Definition: Pipeline script from SCM
+
+SCM: Git
+
+Repositories:
+  Repository URL: https://github.com/cerbris/cicd-assignment.git
+  Credentials: (none)
+
+Branches to build:
+  Branch Specifier: */main
+
+Repository browser: (Auto)
+
+Script Path: Jenkinsfile
+
+☑ Lightweight checkout (optional)
+
+=======================================================
+SAVE CONFIGURATION
+=======================================================
+
+Click: Save
+
+=======================================================
+TEST THE PIPELINE
+=======================================================
+
+1. Click "Build Now"
+2. Click build #1
+3. Click "Console Output"
+4. Verify:
+   ✓ All 8 tests pass
+   ✓ Build shows SUCCESS
+   ✓ WebEx notification received
+
+=======================================================
+JENKINSFILE LOCATION
+=======================================================
+
+The Jenkinsfile is already in your GitHub repository:
+https://github.com/cerbris/cicd-assignment/blob/main/Jenkinsfile
+
+Jenkins will automatically read it from the repository.
+
+=======================================================
+PREREQUISITES
+=======================================================
+
+Before the pipeline works, you need:
+
+1. ✓ Python 3 installed in Jenkins container
+2. ✓ WebEx credential configured:
+   - ID: webex-webhook-url
+   - Type: Secret text
+   - Secret: Your WebEx webhook URL
+
+3. ✓ ngrok running (for automatic builds)
+4. ✓ GitHub webhook configured (for automatic builds)
+
+=======================================================
+PIPELINE STAGES
+=======================================================
+
+The pipeline has 4 stages:
+
+1. Checkout
+   - Pulls code from GitHub
+
+2. Setup Python Environment
+   - Verifies python3 and pip3
+
+3. Run Unit Tests
+   - Executes 8 unit tests
+   - All must pass
+
+4. Run Application
+   - Runs the calculator demo
+
+Post-build actions:
+   - Success: Sends ✅ to WebEx
+   - Failure: Sends ❌ to WebEx
+
+=======================================================
+WEBEX NOTIFICATION FORMAT
+=======================================================
+
+When build completes, Jenkins sends:
+
+✅ Jenkins Build SUCCESS
+
+Job: cicd-assignment-pipeline
+Build Number: #1
+Status: SUCCESS
+Branch: main
+Commit: abc1234
+Build URL: http://jenkins.../job/cicd-assignment-pipeline/1/
+Timestamp: 2025-11-14 14:30:00
+
+=======================================================
+MANUAL BUILD VS AUTOMATIC BUILD
+=======================================================
+
+Manual Build:
+- Click "Build Now" in Jenkins
+- Console shows: "Started by user admin"
+
+Automatic Build (via GitHub webhook):
+- Push code to GitHub
+- Console shows: "Started by GitHub push"
+
+=======================================================
+VERIFICATION CHECKLIST
+=======================================================
+
+After configuring, verify:
+
+☐ Manual build succeeds
+☐ All 8 unit tests pass
+☐ WebEx notification is received
+☐ GitHub webhook configured
+☐ Automatic build works on git push
+☐ ngrok shows incoming webhook
+☐ Ready to record demo
+
+=======================================================
+
+Jenkins URL: http://jenkins.15.204.74.157.nip.io
+Password: 8c019e08475445a68a4bc66abf310a69
+
+=======================================================
